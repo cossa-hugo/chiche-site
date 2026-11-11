@@ -687,6 +687,10 @@ span.button--acid:active {
 .page__list p {
   margin: 0;
 }
+.page__lang {
+  margin: 12px 0 0;
+  font-size: 14px;
+}
 .page__note {
   margin: 20px 0 0;
   max-width: 760px;
