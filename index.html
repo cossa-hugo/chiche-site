@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Chiche — paris en points entre amis sur vos performances sportives</title>
+  <meta name="description" content="Tu annonces une performance, tes amis misent des points pour ou contre toi, ta montre Garmin donne le verdict. Des points, jamais d'argent.">
+  <meta name="theme-color" content="#D4FF3F">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <!-- L'adresse du site est écrite en entier ici, dans confidentialite.html, robots.txt et sitemap.xml : un test vérifie qu'elles s'accordent. -->
+  <link rel="canonical" href="https://chiche.cloud/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chiche">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://chiche.cloud/">
+  <meta property="og:title" content="Chiche ?">
+  <meta property="og:description" content="Tu l'annonces. Ils misent. La montre tranche.">
+  <meta property="og:image" content="https://chiche.cloud/assets/apercu.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Chiche : tu l'annonces, ils misent, la montre tranche.">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Quand l'app est publiée : décommenter et mettre son numéro, pour le bandeau d'installation de Safari.
+  <meta name="apple-itunes-app" content="app-id=NUMERO_DE_L_APP">
+  -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top__row">
+      <a class="top__logo" href="./" aria-label="Chiche, accueil"><img src="assets/chiche-ticket.svg" alt="Chiche" width="182" height="40"></a>
+      <nav class="top__nav" aria-label="Sections">
+        <a class="link" href="#comment">Comment ça marche</a>
+        <a class="link" href="#regles">Les règles</a>
+        <a class="button button--small" data-store href="#telecharger">Bientôt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Affiché quand le lien d'invitation partagé depuis l'app porte le code de la ligue (?code=…). -->
+    <section class="invite on-ink" data-invite hidden aria-label="Ton invitation">
+      <div class="wrap invite__row">
+        <div>
+          <p class="mono">Tu es invité à parier</p>
+          <p class="invite__code" data-invite-code></p>
+          <p class="invite__text">Installe Chiche, crée ton compte, puis saisis ce code pour rejoindre la ligue.</p>
+        </div>
+        <button class="button button--acid button--small" type="button" data-invite-copy>Copier le code</button>
+      </div>
+    </section>
+
+    <section class="hero" style="--page: var(--acid)">
+      <div class="wrap hero__grid">
+        <div>
+          <h1 class="display">Chiche&#8239;?</h1>
+          <p class="display hero__say">Tu l'annonces. Ils misent. La montre tranche.</p>
+          <p class="lead hero__text">Annonce une performance. Tes amis misent des points pour ou contre toi. Ta montre donne le verdict, et personne ne discute.</p>
+          <div class="hero__cta" id="telecharger">
+            <span class="button" data-store data-store-long>Bientôt sur l'App Store</span>
+            <p class="mono mono--bold">iPhone · montre Garmin · des points, jamais d'argent</p>
+          </div>
+        </div>
+
+        <section class="ticket" id="demo" aria-labelledby="demo-titre">
+          <div class="ticket__part">
+            <div class="ticket__row">
+              <p class="mono">Contrat n° 0C1A · Léa</p>
+              <p class="mono">dim. 15 nov.</p>
+            </div>
+            <p class="display ticket__title" id="demo-titre">10 km<br>sous 48:00</p>
+            <p class="ticket__gage">Gage en cas d'échec : « Je paie l'apéro »</p>
+          </div>
+          <div class="tear" aria-hidden="true"></div>
+          <div class="ticket__part">
+            <div class="opinions">
+              <div><p class="mono">L'algo dit</p><p class="display">27&#8239;%</p></div>
+              <div><p class="mono">Le marché dit</p><p class="display" data-market>41&#8239;%</p></div>
+            </div>
+            <div class="split" role="img" aria-label="Répartition des mises pour et contre" data-split><div class="split__pour" style="width: 41%"></div></div>
+            <div class="odds"><span data-odds-pour>Pour ×2,44</span><span data-odds-contre>Contre ×1,69</span></div>
+            <div class="odds"><span data-pts-pour>410 pts</span><span data-pts-contre>590 pts</span></div>
+          </div>
+          <div class="tear" aria-hidden="true"></div>
+          <div class="ticket__part">
+            <p class="mono mono--bold">À toi : tu mises pour ou contre Léa ?</p>
+            <div class="play__sides">
+              <button class="side" type="button" data-side="pour" aria-pressed="false">Pour</button>
+              <button class="side" type="button" data-side="contre" aria-pressed="true">Contre</button>
+            </div>
+            <fieldset class="chips-set">
+              <legend class="sr">Ta mise, en points</legend>
+              <div class="chips">
+                <button class="chip" type="button" data-stake="25" aria-pressed="false">25</button>
+                <button class="chip" type="button" data-stake="50" aria-pressed="true">50</button>
+                <button class="chip" type="button" data-stake="100" aria-pressed="false">100</button>
+              </div>
+            </fieldset>
+            <p class="play__preview" data-preview aria-live="polite">Active JavaScript pour jouer la démonstration.</p>
+            <button class="button play__go" type="button" data-go>La montre tranche</button>
+            <p class="play__note">Démonstration. Ici le verdict est tiré au sort avec les 27 % de l'algo ; dans l'app, c'est la montre de Léa qui tranche.</p>
+          </div>
+          <div class="verdict" data-verdict hidden aria-live="assertive">
+            <img data-verdict-stamp alt="">
+            <p class="display verdict__time" data-verdict-time></p>
+            <p class="verdict__text" data-verdict-text></p>
+            <button class="button button--small" type="button" data-again>Rejouer</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="comment" aria-label="Comment ça marche">
+      <div class="steps">
+        <div class="step step--acid">
+          <p class="display step__n" aria-hidden="true">1</p>
+          <div><h3 class="display">Tu l'annonces</h3><p>Une distance, un temps, une échéance, un gage. Une fois signé, impossible de reculer.</p></div>
+        </div>
+        <div class="step step--ticket">
+          <p class="display step__n" aria-hidden="true">2</p>
+          <div><h3 class="display">Ils misent</h3><p>Pour ou contre toi, en points. Les cotes bougent à chaque mise, et les mises ferment avant ton départ.</p></div>
+        </div>
+        <div class="step step--ink">
+          <p class="display step__n" aria-hidden="true">3</p>
+          <div><h3 class="display">La montre tranche</h3><p>Une seule tentative. Ta montre fait foi : tenu, tu encaisses ; raté, tu dois ton gage.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rules" id="regles">
+      <div class="wrap">
+        <h2 class="display">Les règles, sans astérisque</h2>
+        <ul class="rules__list">
+          <li><h3>Des points, jamais d'argent</h3><p>1 000 points à l'inscription. Ils ne s'achètent pas et ne valent rien en argent : il faut les gagner.</p></li>
+          <li><h3>Tout le pot aux gagnants</h3><p>C'est un pari mutuel : le pot est partagé entre ceux qui ont vu juste, au prorata de leur mise. Une mise par joueur et par contrat.</p></li>
+          <li><h3>Personne ne mise en sachant</h3><p>Les mises ferment 24 heures avant l'échéance, et au plus tard quand le départ est déclaré.</p></li>
+          <li><h3>Une seule tentative</h3><p>Tu déclares ton départ, tu as 3 heures pour lancer ta sortie. La première sortie assez longue compte. S'arrêter avant la distance, c'est raté.</p></li>
+          <li><h3>Le temps de la montre</h3><p>Le meilleur temps sur la distance à l'intérieur de ta sortie, pauses comprises, lu dans le fichier de la montre.</p></li>
+          <li><h3>Pas de départ, c'est un forfait</h3><p>Sans départ déclaré avant l'échéance, le contrat est raté. Et le gage est dû.</p></li>
+          <li><h3>L'algo te connaît</h3><p>Il lit tes 90 derniers jours de course et te donne tes chances. Un contrat trop facile ou hors de portée est refusé.</p></li>
+          <li><h3>Entre amis</h3><p>On joue en ligue, sur invitation. Tes amis voient tes contrats et tes mises ; ni ton e-mail, ni tes sorties.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="final on-ink">
+      <div class="wrap final__grid">
+        <div>
+          <h2 class="display">Alors, chiche&#8239;?</h2>
+          <p class="lead">Annonce la couleur. Tes amis feront le reste.</p>
+          <p style="margin-top: 26px"><span class="button button--acid" data-store data-store-long>Bientôt sur l'App Store</span></p>
+          <p class="mono">Pour iPhone, avec une montre Garmin.</p>
+        </div>
+        <img class="final__stamp" src="assets/tampon-chiche-acide.svg" alt="" width="340" height="170">
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__row">
+        <span>© 2026 Chiche</span>
+        <span><a href="confidentialite.html">Tes données</a></span>
+      </div>
+      <p>Éditeur : Hugo COSSA. Contact : hugo.cossa@hotmail.fr.</p>
+      <p>App Store est une marque d'Apple Inc. Garmin est une marque de Garmin Ltd. ou de ses filiales. Chiche est une application indépendante, sans lien avec Garmin.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
