@@ -715,23 +715,55 @@ span.button--acid:active {
 .signup {
   padding-block: clamp(40px, 8vw, 96px);
 }
+.signup__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
 .signup__text {
   max-width: 46ch;
   margin: 18px 0 0;
 }
 .signup__form {
-  margin-top: 28px;
   max-width: 520px;
   display: grid;
   gap: 12px;
 }
+/* Grand écran : le texte à gauche, le formulaire à droite dans un ticket, comme l'accueil. */
+@media (min-width: 940px) {
+  .signup__grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: clamp(40px, 5vw, 80px);
+  }
+  .signup__form {
+    max-width: none;
+    padding: 32px;
+    gap: 14px;
+    background: var(--ticket);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .signup__email {
+    background: var(--counter);
+  }
+  .signup__form .signup__legal {
+    color: var(--grey);
+  }
+}
 .signup__email {
-  min-height: 56px;
-  padding: 0 14px;
+  width: 100%;
+  min-height: 60px;
+  padding: 0 16px;
   border: 3px solid var(--ink);
+  border-radius: 0;
   background: var(--ticket);
   color: var(--ink);
-  font: 600 18px / 1.2 var(--text);
+  font: 600 20px / 1.2 var(--text);
+  appearance: none;
+}
+.signup__email::placeholder {
+  color: var(--grey);
+  opacity: 1;
 }
 .signup__email:focus-visible {
   outline: 3px solid var(--ink);
@@ -769,4 +801,8 @@ span.button--acid:active {
 .signup__form--done .signup__platforms,
 .signup__form--done .signup__go {
   display: none;
+}
+/* « TÉLÉPHONE » sous « BIENTÔT » : les accents ont besoin d'un peu d'air entre les deux lignes. */
+.signup .hero__say {
+  line-height: 1.12;
 }

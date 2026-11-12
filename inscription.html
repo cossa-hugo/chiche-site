@@ -31,12 +31,14 @@
 
   <main>
     <section class="hero signup" style="--page: var(--acid)">
-      <div class="wrap">
-        <h1 class="display">Chiche&#8239;?</h1>
-        <p class="display hero__say">Bientôt sur ton téléphone.</p>
-        <p class="lead signup__text">Tu annonces une performance, tes amis misent des points pour ou contre toi, ta montre Garmin tranche. Laisse ton e-mail : on t'écrit une fois, le jour où l'app sort.</p>
+      <div class="wrap signup__grid">
+        <div>
+          <h1 class="display">Chiche&#8239;?</h1>
+          <p class="display hero__say">Bientôt sur ton téléphone.</p>
+          <p class="lead signup__text">Tu annonces une performance, tes amis misent des points pour ou contre toi, ta montre Garmin tranche. Laisse ton e-mail : on t'écrit une fois, le jour où l'app sort.</p>
+        </div>
 
-        <!-- Le formulaire marche sans script : il ne s'envoie qu'avec, et le dit sinon. -->
+        <!-- Le formulaire ne s'envoie qu'avec le script, et le dit sinon. Sur grand écran, il tient dans un ticket à droite. -->
         <form class="signup__form" data-signup novalidate>
           <label class="mono mono--bold" for="email">Ton e-mail</label>
           <input class="signup__email" id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" placeholder="toi@exemple.fr">
