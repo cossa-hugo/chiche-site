@@ -18,12 +18,12 @@
     </div>
   </header>
 
-  <!-- L'adresse de cette page est déclarée chez Garmin comme adresse de retour de la connexion (OAuth) : ne pas la renommer sans la changer là-bas. La liaison elle-même n'est pas encore ouverte. -->
+  <!-- L'adresse de cette page est déclarée chez Garmin comme adresse de retour de la connexion (OAuth) : ne pas la renommer sans la changer là-bas. Garmin y renvoie le joueur avec un code ; montre.js le remet au serveur. -->
   <main class="page">
     <div class="wrap">
-      <h1 class="display">Relier ta montre</h1>
-      <p class="lead page__lead">La liaison de ta montre Garmin se fait depuis l'app Chiche. Elle n'est pas encore ouverte à tous les joueurs.</p>
-      <a class="button" href="./">Retour à l'accueil</a>
+      <h1 class="display" data-title aria-live="polite">Relier ta montre</h1>
+      <p class="lead page__lead" data-text aria-live="polite">La liaison de ta montre Garmin se fait depuis l'app Chiche.</p>
+      <a class="button" href="./">Aller à l'accueil</a>
     </div>
   </main>
 
@@ -36,5 +36,6 @@
       <p>Garmin est une marque de Garmin Ltd. ou de ses filiales. Chiche est une application indépendante, sans lien avec Garmin.</p>
     </div>
   </footer>
+  <script src="montre.js"></script>
 </body>
 </html>
