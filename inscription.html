@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Être prévenu de la sortie — Chiche</title>
+  <meta name="description" content="Chiche arrive bientôt sur iPhone et Android. Laisse ton e-mail : on t'écrit une fois, le jour de la sortie.">
+  <meta name="theme-color" content="#D4FF3F">
+  <link rel="canonical" href="https://chiche.cloud/inscription.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chiche">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://chiche.cloud/inscription.html">
+  <meta property="og:title" content="Chiche ? Sois prévenu de la sortie">
+  <meta property="og:description" content="Tu l'annonces. Ils misent. La montre tranche. Laisse ton e-mail, on te prévient le jour J.">
+  <meta property="og:image" content="https://chiche.cloud/assets/apercu.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top__row">
+      <a class="top__logo" href="./" aria-label="Chiche, accueil"><img src="assets/chiche-ticket.svg" alt="Chiche" width="182" height="40"></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero signup" style="--page: var(--acid)">
+      <div class="wrap">
+        <h1 class="display">Chiche&#8239;?</h1>
+        <p class="display hero__say">Bientôt sur ton téléphone.</p>
+        <p class="lead signup__text">Tu annonces une performance, tes amis misent des points pour ou contre toi, ta montre Garmin tranche. Laisse ton e-mail : on t'écrit une fois, le jour où l'app sort.</p>
+
+        <!-- Le formulaire marche sans script : il ne s'envoie qu'avec, et le dit sinon. -->
+        <form class="signup__form" data-signup novalidate>
+          <label class="mono mono--bold" for="email">Ton e-mail</label>
+          <input class="signup__email" id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" placeholder="toi@exemple.fr">
+
+          <fieldset class="signup__platforms">
+            <legend class="mono mono--bold">Ton téléphone</legend>
+            <div class="play__sides">
+              <button class="side" type="button" data-platform="iphone" aria-pressed="true">iPhone</button>
+              <button class="side" type="button" data-platform="android" aria-pressed="false">Android</button>
+            </div>
+          </fieldset>
+
+          <!-- Champ piège : invisible pour un humain, rempli par les robots. -->
+          <div class="sr" aria-hidden="true">
+            <label for="site_web">Ne pas remplir</label>
+            <input id="site_web" name="site_web" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button class="button signup__go" type="submit" data-signup-go>Préviens-moi</button>
+          <p class="signup__status" data-signup-status role="status" aria-live="polite">Active JavaScript pour t'inscrire.</p>
+          <p class="signup__legal">Un seul e-mail, le jour de la sortie. Ton adresse ne sert à rien d'autre, n'est transmise à personne et s'efface au plus tard un an après ton inscription. Pour te retirer : <a href="mailto:hugo.cossa@hotmail.fr">hugo.cossa@hotmail.fr</a>. <a href="confidentialite.html">Tes données</a>.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__row">
+        <span>© 2026 Chiche</span>
+        <span><a href="./">Accueil</a></span>
+      </div>
+      <p>Éditeur : Hugo COSSA. Contact : hugo.cossa@hotmail.fr.</p>
+      <p>App Store est une marque d'Apple Inc. Google Play est une marque de Google LLC. Garmin est une marque de Garmin Ltd. ou de ses filiales. Chiche est une application indépendante, sans lien avec Garmin.</p>
+    </div>
+  </footer>
+
+  <script src="inscription.js"></script>
+</body>
+</html>

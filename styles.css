@@ -710,3 +710,63 @@ span.button--acid:active {
   text-transform: uppercase;
   text-decoration: none;
 }
+
+/* ---- Inscription à la sortie ---- */
+.signup {
+  padding-block: clamp(40px, 8vw, 96px);
+}
+.signup__text {
+  max-width: 46ch;
+  margin: 18px 0 0;
+}
+.signup__form {
+  margin-top: 28px;
+  max-width: 520px;
+  display: grid;
+  gap: 12px;
+}
+.signup__email {
+  min-height: 56px;
+  padding: 0 14px;
+  border: 3px solid var(--ink);
+  background: var(--ticket);
+  color: var(--ink);
+  font: 600 18px / 1.2 var(--text);
+}
+.signup__email:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.signup__platforms {
+  margin: 8px 0 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  gap: 8px;
+}
+.signup__platforms .side[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--acid);
+}
+.signup__go {
+  margin-top: 8px;
+}
+.signup__go:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+.signup__status {
+  margin: 0;
+  min-height: 1.4em;
+  font-weight: 700;
+}
+.signup__legal {
+  margin: 0;
+  font-size: 14px;
+  max-width: 60ch;
+}
+.signup__form--done .signup__email,
+.signup__form--done .signup__platforms,
+.signup__form--done .signup__go {
+  display: none;
+}

@@ -10,7 +10,12 @@ const APP_STORE_URL = "";
 for (const node of document.querySelectorAll("[data-store]")) {
   const long = node.hasAttribute("data-store-long");
   if (!APP_STORE_URL) {
-    node.textContent = long ? "Bientôt sur l'App Store" : "Bientôt";
+    // Pas encore publiée : les boutons mènent à l'inscription pour être prévenu de la sortie.
+    const link = document.createElement("a");
+    link.className = node.className;
+    link.href = "inscription.html";
+    link.textContent = long ? "Être prévenu de la sortie" : "Me prévenir";
+    node.replaceWith(link);
     continue;
   }
   // L'app est publiée : la mention devient un vrai lien vers l'App Store.
